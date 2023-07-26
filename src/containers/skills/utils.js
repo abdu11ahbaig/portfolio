@@ -50,5 +50,18 @@ export const skillsData = [
           percentage: "85",
         },
       ],
+  },
+        {
+      label: "DIGITAL MARKETING",
+      data: [
+        {
+          skillName: "SEO",
+          percentage: "60",
+        },
+        {
+          skillName: "CONTENT WRITING",
+          percentage: "80",
+        },
+      ],
     },
   ];
