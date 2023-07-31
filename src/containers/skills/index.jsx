@@ -4,7 +4,7 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import { Animate, AnimateKeyframes } from "react-simple-animate";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { skillsData } from "./utils";
-import './styles.scss';
+import "./styles.scss";
 
 const Skills = () => {
   return (
@@ -21,7 +21,7 @@ const Skills = () => {
               duration={1}
               delay={0.3}
               start={{
-                transform: "translateX(-200px)",
+                transform: "translateX(-45px)",
               }}
               end={{
                 transform: "translateX(0px)",
@@ -34,9 +34,9 @@ const Skills = () => {
                 {item.data.map((skillItem, j) => (
                   <AnimateKeyframes
                     play
-                    duration={1}
-                    keyframes={["opacity : 1", "opacity : 0"]}
-                    iterationCount="1"
+                    duration={0}
+                    keyframes={["opacity : 100", "opacity : 0100"]}
+                    iterationCount="0.25"
                   >
                     <div className="progressbar-wrapper" key={j}>
                       <p>{skillItem.skillName}</p>
