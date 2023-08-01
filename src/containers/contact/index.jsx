@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useRef } from "react";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { Animate } from "react-simple-animate";
+import emailjs from "emailjs-com";
 import "./styles.scss";
 
 const Contact = () => {
+  const ref = useRef();
+  // const [success, setSuccess] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_x2gveog",
+        "template_ujmqey7",
+        ref.current,
+        "3AJcqZB1pz00-8d58"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          // setSuccess(true);
+        },
+        (error) => {
+          console.log(error.text);
+          // setSuccess(false);
+        }
+      );
+  };
+
   return (
     <section id="contact" className="contact">
       <PageHeaderContent
@@ -36,48 +62,53 @@ const Contact = () => {
             transform: "translateX(0px)",
           }}
         >
-          <div className="contact__content__form">
+          <form
+            className="contact__content__form"
+            onSubmit={handleSubmit}
+            ref={ref}
+          >
             <div className="contact__content__form__controlswrapper">
               <div>
                 <input
                   required
-                  name="name"
+                  name="from_name"
                   className="inputName"
                   type={"text"}
                 />
-                <label htmlFor="name" className="nameLabel">
+                <label htmlFor="from_name" className="nameLabel">
                   Name
                 </label>
               </div>
               <div>
                 <input
                   required
-                  name="email"
+                  name="reply_to"
                   className="inputEmail"
-                  type={"text"}
+                  type={"email"}
                 />
-                <label htmlFor="email" className="emailLabel">
+                <label htmlFor="reply_to" className="emailLabel">
                   Email
                 </label>
               </div>
               <div>
                 <textarea
                   required
-                  name="description"
+                  name="message"
                   className="inputDescription"
                   type={"text"}
                   rows="5"
                 />
-                <label htmlFor="description" className="descriptionLabel">
+                <label htmlFor="message" className="descriptionLabel">
                   Description
                 </label>
               </div>
             </div>
-            <button>Submit</button>
-          </div>
+            <button type="submit">Submit</button>
+          </form>
         </Animate>
       </div>
     </section>
   );
 };
+
 export default Contact;

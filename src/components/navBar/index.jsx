@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FaBars, FaReact } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./styles.scss";
+
 const data = [
   {
     label: "HOME",
@@ -32,10 +33,17 @@ const data = [
 
 const Navbar = () => {
   const [toggleIcon, setToggleIcon] = useState(false);
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState(location.pathname);
 
   const handleToggleIcon = () => {
     setToggleIcon(!toggleIcon);
   };
+
+  const handleLinkClick = (to) => {
+    setActiveLink(to);
+  };
+
   return (
     <div>
       <nav className="navbar">
@@ -48,10 +56,16 @@ const Navbar = () => {
           className={`navbar__container__menu ${toggleIcon ? "active" : ""} `}
         >
           {data.map((item, key) => (
-            <li key={key} className="navbar__container__menu__item">
+            <li
+              key={key}
+              className={`navbar__container__menu__item ${
+                activeLink === item.to ? "active" : ""
+              }`}
+            >
               <Link
                 className="navbar__container__menu__item__links"
                 to={item.to}
+                onClick={() => handleLinkClick(item.to)}
               >
                 {item.label}
               </Link>
