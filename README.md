@@ -1,3 +1,3 @@
 LIVE DEMO
 
-https://64c0e3aafa205c3ffa2ea1b6--abd11ah-baig.netlify.app/
+https://64c8cbc552a8f45f42b2ef9c--stalwart-salamander-1f8d4f.netlify.app/
