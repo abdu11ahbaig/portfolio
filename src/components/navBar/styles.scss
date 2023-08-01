@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     background-color: var(--yellow-theme-nav-background-color);
     height: 80px;
     display: flex;
@@ -7,30 +7,31 @@
     font-size: 1.2rem;
     position: sticky;
 
-    &__container{
+    &__container {
         display: flex;
         align-items: center;
         width: 100%;
         height: inherit;
         padding: 0px 20px;
         flex: 1;
-        &__logo{
+
+        &__logo {
             color: var(--yellow-theme-main-color);
             cursor: pointer;
         }
 
-        &__menu{
+        &__menu {
             display: flex;
             list-style: none;
             text-align: center;
 
-            &__item{
+            &__item {
                 line-height: 40px;
                 margin-right: 1.5rem;
                 font-size: 1.6rem;
 
-                &::after{
-                    content: '';
+                &::after {
+                    content: "";
                     display: block;
                     height: 3px;
                     width: 0;
@@ -38,27 +39,32 @@
                     transition: all 0.5s ease;
                 }
 
-                &:hover::after{
+                &:hover::after {
                     width: 100%;
                     background: var(--yellow-theme-main-color);
+                    opacity: .4;
                 }
 
-                &__links{
+                &__links {
                     color: var(--yellow-theme-main-color);
                     text-decoration: none;
                     padding: 0.5rem;
+                }
+
+                &.active {
+                    border-bottom: 2px solid var(--yellow-theme-main-color);
                 }
             }
         }
     }
 }
 
-.nav-icon{
+.nav-icon {
     display: none;
 }
 
-@media only screen and (max-width : 768px){
-    .navbar__container__menu{
+@media only screen and (max-width: 768px) {
+    .navbar__container__menu {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -69,23 +75,36 @@
         opacity: 1;
         transition: all 0.5s ease;
 
-        &.active{
+        &.active {
             background: #181818;
             left: 0px;
             opacity: 1;
         }
 
-        &__item{
+        &__item {
             border-bottom: 1px solid #282828;
             margin: 0px;
-            padding: 20px 0px; 
+            padding: 20px 0px;
         }
     }
 
-    .nav-icon{
+    .nav-icon {
         display: block;
         cursor: pointer;
         color: var(--yellow-theme-main-color);
         padding-right: 20px;
+    }
+
+    .navbar__container__menu__item {
+        margin: 0;
+
+        &__links {
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+
+        &.active {
+            border-bottom: 2px solid var(--yellow-theme-main-color);
+        }
     }
 }
