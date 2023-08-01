@@ -67,7 +67,7 @@ const Resume = () => {
                   color: "var(--yellow-theme-sub-text-color)",
                   border: "1.5px solid var(--yellow-theme-main-color)",
                 }}
-                date="2020 - Present"
+                date="2020 - Past"
                 icon={<MdWork />}
                 iconStyle={{
                   background: "#181818",

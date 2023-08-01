@@ -16,13 +16,13 @@ export const data = {
     education: [
       {
         title: "Secondary",
-        subTitle: "ABC School",
+        subTitle: "Islamic science foundation high School",
         description:
           "10th Grade",
       },
       {
         title: "Higher Secondary",
-        subTitle: "ABC School of higher education",
+        subTitle: "Pak garrison  higher school",
         description:
           "12th Grade in Science",
       },
