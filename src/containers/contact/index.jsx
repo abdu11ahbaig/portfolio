@@ -7,7 +7,6 @@ import "./styles.scss";
 
 const Contact = () => {
   const ref = useRef();
-  // const [success, setSuccess] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +21,6 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
-          // setSuccess(true);
         },
         (error) => {
           console.log(error.text);
@@ -34,7 +32,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <PageHeaderContent
-        headerText="My Contact"
+        headerText="Contact Me"
         icon={<BsInfoCircleFill size={40} />}
       />
       <div className="contact__content">
